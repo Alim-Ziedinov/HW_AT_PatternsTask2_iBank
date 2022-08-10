@@ -28,13 +28,13 @@ public class DataGenerator {
     }
 
     private static void sendRequest(RegistrationDto user) {
-             given() // "дано"
-                .spec(requestSpec) // указываем, какую спецификацию используем
-                .body(gson.toJson(user)) // передаём в теле объект, который будет преобразован в JSON
-                .when() // "когда"
+             given() 
+                .spec(requestSpec)
+                .body(gson.toJson(user))
+                .when()
                 .post("/api/system/users")
                 .then()
-                .statusCode(200); // код 200 OK
+                .statusCode(200);
     }
 
     public static String getRandomLogin() {
